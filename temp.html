@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="stilogeral.css">
+<link rel="stylesheet" type="text/css" href="stilocard.css">
+<link rel="stylesheet" type="text/css" href="stilomenu.css">
+</head>
+<body>
+
+<h2>Favorite esse site ↑</h2>
+
+
+<ul>
+  <li><a class="active" href="index.html">WEB SEVERINO</a></li>
+  <a class="button" href="index.html"><img src="imc.png" title="IMC"></a>
+  <a class="button" href="temp.html"><img src="temp.png" title="TEMP."></a>
+  <a class="button" href="ale.html"><img src="alt.png" title="ALTURA"></a>
+  <a class="button" href="regra.html"><img src="conv.png" title="CONV. MOEDA"></a>
+</ul>
+
+
+<div class="card">
+      <h1>Conversão de Temperatura</h1>
+      <label for="cel">Celsius para Fahrenheit</label><br>
+      <input type="number" name="cel" id='cel'>
+      <button onclick="convCel()">Converter</button><br>
+      <p id="resultado1"></p>
+
+      <label for="fah">Fahrenheit para Celcius</label><br>
+      <input type="number" name="fah" id='fah'>
+      <button onclick="convFah()">Converter</button><br>
+      <p id="resultado2"></p>
+</div>
+
+
+<script>
+ function convCel(){
+    
+    let val1   = parseInt(document.getElementById("cel").value);
+    let result = document.getElementById("result"); 
+
+    var conv1 = val1 * 1.8 + 32;
+
+    var arredondado = parseFloat(conv1.toFixed(2));
+    resultado1 = arredondado;
+
+    document.getElementById("resultado1").innerHTML = resultado1;
+   
+    } 
+
+
+    function convFah(){
+     
+    let val2   = parseInt(document.getElementById("fah").value); 
+    let result = document.getElementById("result"); 
+
+    var conv2 = (val2 - 32) / 1.8 ;
+
+    var arredondado = parseFloat(conv2.toFixed(2));
+    resultado2 = arredondado;
+
+    document.getElementById("resultado2").innerHTML = resultado2;
+   
+    } 
+
+</script>
+
+
+</body>
+</html>

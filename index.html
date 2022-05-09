@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="stilogeral.css">
+<link rel="stylesheet" type="text/css" href="stilocard.css">
+<link rel="stylesheet" type="text/css" href="stilomenu.css">
+<!--adicionar todos os metas para adequar o site-->
+</head>
+<body>
+
+<ul>
+  <li><a class="active" href="index.html">WEB SEVERINO</a></li>
+  <a class="button" href="index.html"><img src="imc.png" title="IMC"></a>
+  <a class="button" href="temp.html"><img src="temp.png" title="TEMP."></a>
+  <a class="button" href="ale.html"><img src="alt.png" title="ALTURA"></a>
+  <a class="button" href="regra.html"><img src="conv.png" title="CONV. MOEDA"></a>
+</ul>
+
+<h2>Favorite esse site ↑</h2>
+
+
+<div class="card">
+      <h1>IMC</h1>
+      <label for="peso">Peso:</label><br>
+      <input type="number" name="peso" id='peso'><br>
+      <label for="altura">Altura:</label><br>
+      <input type="number" name="altura" id='altura'><br>
+      <button onclick="calcular()">Calcular</button><br>
+      <p id="demo"></p>
+</div>
+
+
+<script>
+ function calcular(){
+    
+    let val1   = parseInt(document.getElementById("peso").value); 
+    let val2   = parseInt(document.getElementById("altura").value); 
+    let result = document.getElementById("result"); 
+
+    var divi = val2 / 100;
+    var imc = val1 / (divi * divi);
+
+    var arredondado = parseFloat(imc.toFixed(2));
+
+
+    if (imc < 18.5) {
+      resultado = arredondado;
+      text = "Magreza";
+    } else if(imc > 18.5 && imc < 24.9){
+      resultado = arredondado;
+      text = "Normal";
+    } else if(imc > 24.9 && imc < 30){
+      resultado = arredondado;
+      text = "Sobrepeso";
+    } else {
+      resultado = arredondado;
+      text = "Obesidade";
+    }
+
+    document.getElementById("demo").innerHTML = resultado + " = " + text;
+    } 
+
+</script>
+
+
+</body>
+</html>

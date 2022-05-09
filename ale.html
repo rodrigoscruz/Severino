@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="stilogeral.css">
+<link rel="stylesheet" type="text/css" href="stilocard.css">
+<link rel="stylesheet" type="text/css" href="stilomenu.css">
+</head>
+<body>
+
+<h2>Favorite esse site ↑</h2>
+
+
+<ul>
+  <li><a class="active" href="index.html">WEB SEVERINO</a></li>
+  <a class="button" href="index.html"><img src="imc.png" title="IMC"></a>
+  <a class="button" href="temp.html"><img src="temp.png" title="TEMP."></a>
+  <a class="button" href="ale.html"><img src="alt.png" title="ALTURA"></a>
+  <a class="button" href="regra.html"><img src="conv.png" title="CONV. MOEDA"></a>
+</ul>
+
+
+<div class="card">
+      <h1>Gerador de Números Aleatórios</h1>
+      <label for="min">Valor minimo:</label><br>
+      <input type="number" name="min" id='min'><br><br>
+      <label for="max">Valor maximo:</label><br>
+      <input type="number" name="max" id='max'><br><br>
+      <button onclick="document.getElementById('demo').innerHTML = getRndInteger()">Gerar</button><br><br>
+      <p id="demo"></p>
+</div>
+
+
+<script>
+    function getRndInteger(min, max) {
+
+    let val1   = parseInt(document.getElementById("min").value); 
+    let val2   = parseInt(document.getElementById("max").value);
+
+  return Math.floor(Math.random() * ((val2 + 1) - val1)) + val1;
+}
+
+</script>
+
+</body>
+</html>
